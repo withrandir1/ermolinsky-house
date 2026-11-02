@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Особняк Ермолинского — план дома</title>
+<meta name="description" content="Гродненский, 4: интерактивный план особняка — что в каждой комнате, сколько приносит и во что обходится.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0c0b09">
+<meta property="og:title" content="Особняк Ермолинского · Гродненский, 4">
+<meta property="og:description" content="Интерактивный план дома: кино, бальный зал, бильярд, библиотека, подписка «Резиденция» — и деньги.">
+<meta property="og:image" content="https://withrandir1.github.io/ermolinsky-house/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0b09; --panel:#14120f; --ink:#efe6d2; --ink-2:#b9ae98; --ink-3:#7d7465;
+  --wall:#efe6d2; --hatch-bg:#1d1a15; --line:#3a352c;
+  --c-event:#c9a45c; --c-public:#d98a5f; --c-member:#8fae8b; --c-private:#b56b77; --c-service:#6f6a60;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px}
+header{padding:20px 24px 8px;display:flex;flex-wrap:wrap;gap:12px 32px;align-items:baseline}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:30px;margin:0;letter-spacing:.3px}
+.sub{color:var(--ink-2);font-size:13px}
+nav{display:flex;gap:6px;flex-wrap:wrap;padding:6px 24px 14px}
+nav button,.modes button{background:transparent;color:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer}
+nav button.on,.modes button.on{color:var(--bg);background:var(--ink);border-color:var(--ink)}
+main{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:0;border-top:1px solid var(--line)}
+.stage{padding:10px 16px 24px;min-width:0}
+.modes{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:6px 8px 4px;min-height:34px;color:var(--ink-3);font-size:13px}
+svg{width:100%;height:auto;display:block}
+aside{border-left:1px solid var(--line);background:var(--panel);padding:20px 22px;min-height:calc(100vh - 120px)}
+aside h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:26px;margin:0 0 4px}
+aside .meta{color:var(--ink-3);font-size:13px;margin-bottom:14px}
+aside p{margin:0 0 10px;line-height:1.5;color:var(--ink-2)}
+aside dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:14px 0;font-size:14px}
+aside dt{color:var(--ink-3)} aside dd{margin:0}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid currentColor;margin-bottom:10px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 8px 0;font-size:13px;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.note{color:var(--ink-3);font-size:12.5px;line-height:1.5;margin:14px 8px 0}
+.room{cursor:pointer}
+.room .fill{transition:fill-opacity .15s}
+.room:hover .fill{fill-opacity:.22}
+.room.sel .fill{fill-opacity:.32}
+.lbl{font-family:"Cormorant Garamond",Georgia,serif;fill:var(--ink);text-anchor:middle;pointer-events:none}
+.lbl2{font-family:Inter,sans-serif;fill:var(--ink-2);text-anchor:middle;pointer-events:none}
+.fur{fill:none;stroke:var(--ink);stroke-width:1.3;opacity:.62;pointer-events:none}
+.fur.solid{fill:var(--bg)}
+.dash{stroke-dasharray:6 5}
+.outlbl{font-family:Inter,sans-serif;fill:var(--ink-2);font-size:15px;text-anchor:middle}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+th{color:var(--ink-3);font-weight:500}
+tr.tot td{color:var(--ink);font-weight:600;border-top:1px solid var(--ink-3)}
+.pos{color:var(--c-member)} .neg{color:var(--c-private)}
+.money{padding:4px 8px 30px;max-width:1100px}
+.money h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:24px;margin:26px 0 8px}
+.money p,.money li{color:var(--ink-2);line-height:1.55}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--panel)}
+.card b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;font-weight:500;color:var(--ink)}
+.card span{color:var(--ink-3);font-size:13px}
+.scroll{overflow-x:auto}
+.hint{display:none;color:var(--ink-3);font-size:12.5px;margin:2px 8px 6px}
+.close{display:none;position:sticky;top:0;float:right;background:var(--ink);color:var(--bg);border:0;border-radius:999px;width:34px;height:34px;font-size:20px;line-height:34px;cursor:pointer}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+@media (max-width:900px){
+  main{grid-template-columns:1fr} aside{border-left:0;border-top:1px solid var(--line);min-height:0}
+  header,nav{padding-left:16px;padding-right:16px}
+  h1{font-size:26px}
+  .stage{padding:8px 0 20px}
+  .planwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .planwrap svg{width:1000px;max-width:none}
+  .modes,.legend,.note,.hint{margin-left:16px;margin-right:16px}
+  .hint{display:block}
+  aside.sheet{position:fixed;left:0;right:0;bottom:0;z-index:10;max-height:62vh;overflow-y:auto;border:1px solid var(--line);border-bottom:0;border-radius:18px 18px 0 0;box-shadow:0 -12px 40px rgba(0,0,0,.6);padding:16px 18px calc(18px + env(safe-area-inset-bottom));animation:up .25s ease-out}
+  aside.sheet .close{display:block}
+  .money{padding:4px 16px 30px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Особняк Ермолинского · Гродненский, 4</h1>
+  <span class="sub">Расстановка «Резиденции», 02.11.2026 · геометрия по чертежам сайта и поэтажному плану ГУИОН 2006 · масштаб условный</span>
+</header>
+<nav id="tabs"></nav>
+<main id="main">
+  <section class="stage">
+    <div class="modes" id="modes"></div>
+    <p class="hint">План листается вбок →  Нажмите на любую комнату</p>
+    <div class="planwrap"><svg id="plan" viewBox="80 110 1760 900" role="img" aria-label="План этажа"></svg></div>
+    <div class="legend">
+      <span><i style="background:var(--c-event)"></i>События и ужины</span>
+      <span><i style="background:var(--c-public)"></i>Открыто по билету</span>
+      <span><i style="background:var(--c-member)"></i>Подписка «Резиденция»</span>
+      <span><i style="background:var(--c-private)"></i>Приватно, по брони</span>
+      <span><i style="background:var(--c-service)"></i>Сервис</span>
+    </div>
+    <p class="note" id="floorNote"></p>
+  </section>
+  <aside id="info"></aside>
+</main>
+<section class="money" id="money" hidden></section>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+const COLORS={event:'var(--c-event)',public:'var(--c-public)',member:'var(--c-member)',private:'var(--c-private)',service:'var(--c-service)'};
+const CAT={event:'События и ужины',public:'Открыто по билету',member:'Подписка «Резиденция»',private:'Приватно, по брони',service:'Сервис'};
+
+/* ---------- Этажи: контур (заливается штриховкой), комнаты вырезаются поверх ---------- */
+const FLOORS={
+cokol:{
+  title:'Цоколь', site:'на сайте — «Этаж 1»', h:'h = 2,20–2,67 м, пол на 0,8 м ниже земли',
+  note:'Цоколь по БТИ = «Этаж 1» на сайте. Две «гримёрные» — это помещение № 12 по БТИ, 104,5 м², высота 2,67 м: под кинозал и вечеринки. Лёгкую перегородку внутренней гримёрной убираем. Цоколь ниже уровня улицы, поэтому соседям тише.',
+  outline:[[110,150],[1630,150],[1630,415],[1405,415],[1405,845],[110,845]],
+  windows:[['h',150,40,320,365],['h',150,40,395,445],['h',150,40,640,700],['h',150,40,850,895],['h',150,40,1200,1260],['h',150,40,1460,1520],
+           ['h',805,40,225,268],['h',805,40,320,392],['h',805,40,440,488],['h',805,40,537,580],['h',805,40,630,678],['h',805,40,1150,1205],['h',805,40,1250,1305]],
+  rooms:[
+    {id:'c_serv',r:[145,190,133,295],cat:'service',name:'Служебная лестница',s:'санузел персонала',fs:17},
+    {id:'c_kitchen',r:[312,190,178,295],cat:'service',name:'Кухня',s:'БТИ № 1 · 39,4 м²'},
+    {id:'c_pantry',r:[520,190,75,295],cat:'service',name:'Кладовая',fs:15,vert:true},
+    {id:'c_stair',r:[620,190,125,250],cat:'service',name:'Лестница',fs:16,stair:'v'},
+    {id:'c_cellar',r:[770,190,270,295],cat:'member',name:'Погреб',s:'ячейки резидентов',ly:250},
+    {id:'c_store',r:[1075,190,305,200],cat:'service',name:'Склад и персонал',s:'БТИ № 10 · 34,3 м²',ly:300},
+    {id:'c_humidor',r:[1405,190,190,200],cat:'service',name:'Хьюмидор',s:'запас сигар',fs:19,ly:300},
+    {id:'c_corr',r:[1075,415,295,70],cat:'service',name:'Коридор',fs:15},
+    {id:'c_cinema',r:[145,520,600,285],cat:'public',name:'Кинозал «Синема консула»',s:'БТИ № 12 · 104,5 м² · h 2,67',fs:24,ly:550},
+    {id:'c_foyer',r:[750,520,65,285],cat:'public',name:'Фойе',fs:15,vert:true},
+    {id:'c_stairmain',r:[845,520,195,270],cat:'service',name:'Парадная лестница',s:'наверх, в залы',fs:17,stair:'v2'},
+    {id:'c_wc1',r:[1075,520,145,80],cat:'service',name:'WC',fs:16},
+    {id:'c_wc2',r:[1225,520,145,80],cat:'service',name:'WC',fs:16},
+    {id:'c_wardrobe',r:[1075,605,295,200],cat:'service',name:'Гардероб',s:'БТИ № 18 · 41,2 м²'},
+    {id:'c_yard',r:[1440,440,330,370],cat:'public',name:'Двор',s:'100 м² · сигары у огня',yard:true},
+  ],
+  openings:[[690,485,50,35],[870,485,45,35],[815,600,30,70],[1040,600,35,60],[1135,600,40,5],[1285,600,40,5],[1370,640,35,60],[1005,190,0,0],[595,300,25,50],[1040,300,35,60],[1370,450,35,30]],
+  extra:'cokolExtra'
+},
+paradny:{
+  title:'Парадный этаж', site:'на сайте — «Этаж 2»', h:'по БТИ — 1-й этаж',
+  note:'Парадный этаж = «Этаж 2» на сайте. Основной зал 160 м² работает в трёх режимах: событие (как у текущих арендаторов), выставка в свободные дни и бал. Лаунж и welcome-зона перестают пустовать между событиями: здесь бильярдная и бар. Положение камина на схеме условное, уточнить на месте.',
+  outline:[[105,212],[1265,212],[1265,235],[1810,235],[1810,490],[1590,490],[1590,906],[105,906]],
+  bay:true,
+  windows:[['h',212,36,195,245],['h',212,36,320,365],['h',212,36,395,445],['h',212,36,548,695],['h',212,36,860,905],['h',212,36,1010,1060],['h',212,36,1130,1190],
+           ['h',872,34,372,415],['h',872,34,620,665],['h',872,34,720,765],['h',872,34,820,865],['h',872,34,920,965],['h',872,34,1300,1345],['h',872,34,1440,1485],
+           ['h',460,30,1480,1520],['h',460,30,1560,1600],['h',460,30,1650,1690],['h',460,30,1720,1760]],
+  rooms:[
+    {id:'p_serv',r:[137,248,128,257],cat:'service',name:'Служебная лестница',fs:15,vert:true},
+    {id:'p_kitchen',r:[295,248,160,307],cat:'service',name:'Кухня',s:'подача в зал',fs:20},
+    {id:'p_pool',r:[487,248,288,307],cat:'member',name:'Бильярдная «Solids»',s:'БТИ № 38 · 60,0 м²',fs:24,ly:290},
+    {id:'p_stair',r:[805,280,130,220],cat:'service',name:'Лестница',fs:15,stair:'v'},
+    {id:'p_corr',r:[805,500,130,55],cat:'service',name:'',fs:1},
+    {id:'p_bar',r:[965,248,265,307],cat:'member',name:'Бар «Буфетная»',s:'БТИ № 28 · 57,7 м²',fs:22,ly:515},
+    {id:'p_hall',r:[137,585,896,287],cat:'event',name:'Основной зал Ермолинского',s:'160 м² · события · выставка · бал',fs:28,ly:618},
+    {id:'p_hallbay',r:[137,535,128,50],cat:'event',name:'',fs:1,part:'p_hall'},
+    {id:'p_stairmain',r:[1063,585,167,287],cat:'service',name:'Парадная лестница',s:'из цоколя',fs:17,stair:'main'},
+    {id:'p_vip1',r:[1265,265,145,195],cat:'private',name:'VIP «Атташе»',s:'~25 м²',fs:17,ly:428},
+    {id:'p_vip2',r:[1440,265,338,195],cat:'private',name:'VIP «Шифровальная»',s:'БТИ № 5–6 · ~33 м²',fs:20,ly:292},
+    {id:'p_pass',r:[1265,490,325,65],cat:'service',name:'Проход',fs:15},
+    {id:'p_svc',r:[1330,585,225,62],cat:'service',name:'Санузлы',fs:15},
+    {id:'p_games',r:[1265,675,290,197],cat:'member',name:'Игральный зал',s:'БТИ № 33 · 43,4 м²',fs:22,ly:705},
+  ],
+  openings:[[660,555,53,30],[862,555,55,30],[1065,555,40,30],[1230,385,35,35],[1410,330,30,60],[1265,585,0,0],[1290,555,30,120],[1230,600,35,60],[1063,600,0,0],[1033,600,30,35],[1108,872,77,34],[935,520,30,30],[775,520,30,30]],
+  piers:[[265,785,30,87],[512,785,32,87],[510,555,35,110],[218,505,152,30],[265,535,30,130]],
+  extra:'paradnyExtra'
+},
+upper:{
+  title:'Верхний этаж', site:'на сайте нет · по БТИ — 2-й этаж', h:'h = 3,70 м, салон — 3,90 м',
+  note:'Этот этаж есть только в поэтажном плане ГУИОН 2006 (2-й этаж, около 400 м² комнат); на сайте оператора его нет. Здесь бывшие апартаменты: комнаты с санузлами, тихо, высокие потолки. Это этаж подписки «Резиденция» и спальни посла. Перегородки сохраняем — так дешевле, и объект наследия трогать не нужно.',
+  outline:[[105,212],[1265,212],[1265,568],[1590,568],[1590,906],[105,906]],
+  bay:true, balcony:true,
+  windows:[['h',212,36,180,230],['h',212,36,330,380],['h',212,36,500,560],['h',212,36,640,700],['h',212,36,960,1010],['h',212,36,1100,1160],
+           ['h',872,34,330,380],['h',872,34,420,470],['h',872,34,560,600],['h',872,34,880,930],['h',872,34,1080,1130],['h',872,34,1300,1350],['h',872,34,1400,1450],['h',872,34,1500,1540]],
+  rooms:[
+    {id:'u_stair57',r:[137,248,135,214],cat:'service',name:'Служ. лестница',fs:15,stair:'v'},
+    {id:'u_store',r:[137,490,135,72],cat:'service',name:'Кладовая',fs:14},
+    {id:'u_ward',r:[137,590,135,96],cat:'member',name:'Гардероб',s:'резидентов',fs:15},
+    {id:'u_bay',r:[137,714,135,158],cat:'member',name:'Эркер',s:'чтение',fs:17},
+    {id:'u_wc',r:[300,248,144,82],cat:'service',name:'WC',fs:15},
+    {id:'u_buffet',r:[300,358,144,102],cat:'service',name:'Буфетная',s:'этажа',fs:16},
+    {id:'u_buffet2',r:[364,486,80,70],cat:'service',name:'',fs:1,part:'u_buffet'},
+    {id:'u_library',r:[472,248,294,214],cat:'member',name:'Библиотека',s:'БТИ № 60 · 44,0 м²',fs:24,ly:395},
+    {id:'u_reading',r:[472,490,294,66],cat:'member',name:'Выставка писателя',s:'БТИ № 61 · 13,6 м²',fs:16},
+    {id:'u_stair63',r:[794,248,121,308],cat:'service',name:'Лестница',fs:15,stair:'v'},
+    {id:'u_bath1',r:[943,248,93,214],cat:'service',name:'Санузлы',fs:14,vert:true},
+    {id:'u_apt2',r:[1064,248,169,214],cat:'private',name:'Апартамент 2',s:'БТИ № 41 · 27 м² · резерв',fs:17,ly:285},
+    {id:'u_lockers',r:[943,490,290,66],cat:'member',name:'Ячейки резидентов',s:'БТИ № 42 · 14,8 м²',fs:15,ly:533},
+    {id:'u_gallery',r:[300,582,609,26],cat:'member',name:'',fs:1,part:'u_gallery2'},
+    {id:'u_gallery2',r:[507,582,402,92],cat:'member',name:'Галерея поэтов',s:'БТИ № 49 · 18,6 м²',fs:17},
+    {id:'u_bath2',r:[935,597,298,77],cat:'private',name:'Ванная посла',fs:15},
+    {id:'u_lounge',r:[300,636,201,236],cat:'member',name:'Гостиная',s:'БТИ № 54 · 61,8 м²',fs:22,ly:662},
+    {id:'u_vinyl',r:[507,700,201,172],cat:'member',name:'Винил-салон',s:'БТИ № 53 · 24,5 м²',fs:19,ly:724},
+    {id:'u_dress',r:[734,700,83,172],cat:'service',name:'Санузлы',fs:13,vert:true},
+    {id:'u_vip3',r:[843,700,158,172],cat:'private',name:'VIP «Консул»',s:'БТИ № 48 · 23,7 м²',fs:18,ly:724},
+    {id:'u_suite',r:[1029,700,204,172],cat:'private',name:'Спальня посла',s:'БТИ № 46 · 26,7 м²',fs:19,ly:722},
+    {id:'u_salon',r:[1265,600,293,272],cat:'event',name:'Салон приёмов',s:'БТИ № 43 · 58,7 м² · h 3,9',fs:22,ly:640},
+  ],
+  openings:[[600,556,40,26],[700,556,40,26],[400,608,40,28],[580,674,40,26],[880,674,40,26],[1110,674,40,26],[909,610,26,40],[1233,640,32,50],[835,300,0,0],[1036,330,28,40],[1100,462,40,28],[1000,462,40,28],[272,520,28,40],[272,620,28,40],[272,760,28,40],[444,390,28,40],[766,360,28,50],[501,760,6,40],[817,760,26,40],[1001,760,28,40]],
+  extra:'upperExtra'
+}};
+
+/* ---------- Что в каждой комнате ---------- */
+const INFO={
+c_cinema:{tag:'public',what:'Кинозал и концертный зал на 28 мест: диваны, пуфы, барная стойка у входа. Показываем артхаус, кино эпох дома (1900-е, оттепель, американские 70-е), сериалы марафонами. Сами собираем показы, а не ждём клиента. Вечером в пятницу и субботу перестраиваем под вечеринку или концерт на 80 человек стоя.',
+  cap:'28 мест в кино · 80 стоя',money:'вклад ~0,72 млн/мес (база)',capex:'4,2 млн полный зал, или 1,5 млн лёгкий: портативные проекторы и без полной шумоизоляции',
+  market:'Кинопоказы в особняках Петербурга: Особняк Мясникова — 2 800 ₽, хэллоуинский «Дракула» в особняке — 3 600 ₽. Антикинотеатры для пар стоят 900–1 500 ₽ в час: это масса, а у нас пакет-свидание в особняке.',
+  sale:'Билет на показ 3 000 ₽ с бокалом · частный показ для компании 40 000 ₽ · свидание в VIP-комнате с проектором 15 000 ₽'},
+c_foyer:{tag:'public',what:'Фойе кинозала: афиши показов, продажа билетов, вход в зал из коридора.'},
+c_cellar:{tag:'member',what:'Погреб: стеллажи с вином и именные ячейки резидентов. Своя бутылка хранится здесь и подаётся наверх за пробковый сбор. Дегустационный стол на 8 персон.',cap:'8 за столом',money:'входит в «Бар: пробковый сбор и ячейки», ~0,41 млн/мес',capex:'стеллажи и ячейки ~0,4 млн'},
+c_kitchen:{tag:'service',what:'Основная кухня. Готовит для зала и для ужинов. Блюда эпох — по меню шефа или кейтеринга.'},
+c_store:{tag:'service',what:'Склад реквизита и вещей шоурумов на смену, раздевалка персонала.'},
+c_humidor:{tag:'service',what:'Хьюмидор: запас сигар и трубочного табака. Курят во дворе у обогревателей: курить в помещениях общепита запрещено (15-ФЗ).'},
+c_wardrobe:{tag:'service',what:'Гардероб у парадного входа. На выходе отсюда гость получает конверт с приглашением.'},
+c_yard:{tag:'public',what:'Двор 100 м² с деревьями. Зимой здесь сигары и трубки у газовых обогревателей, пледы. Летом — веранда, приём гостей, фотозона. Работает до 23:00, чтобы не мешать соседям.',cap:'до 100 стоя летом'},
+c_stairmain:{tag:'service',what:'Парадная лестница. С улицы гость входит в цоколь и поднимается в залы. Лестница — часть маршрута выставки.'},
+p_hall:{tag:'event',what:'Главный зал. Три режима. 1) События: свадьбы и корпоративы, как у текущих арендаторов; это стабильная касса. 2) Выставка «Дом открывает двери» в свободные дни, вход только по приглашению. 3) Наши иммерсивные ужины и балы: «Приём посла», «Приём у графа Воронцова», «Собрание декабристов», новогодний бал.',
+  cap:'банкет 80–90 · фуршет 200 (по данным оператора)',money:'события ~1,2 + выставка ~1,16 + ужины ~1,22 = ~3,6 млн/мес',capex:'выставка 0,6 млн, реквизит ужинов 0,5 млн',
+  sale:'Выставка: 1 500 ₽ «Гость дома» и 5 000 ₽ «Гость посла». Ужин-приём 15 000 ₽. Аренда под событие ~300 тыс. за вечер',
+  invite:'Вход только по знакомству. У каждого основателя (друга) 10 личных кодов. Каждый гость после визита получает 2 кода для своих. Код ведёт на билет, и в базе видно, кто кого привёл: так растёт дерево клиентов. Это эксклюзивность и органика одновременно. Порог: если каждый гость приводит меньше одного нового, раз в месяц добавляем «семена» — новые коды узлам.'},
+p_pool:{tag:'member',what:'Бильярдная «Solids» в духе американской резиденции: стол для американского пула 9 футов, редкий, например восстановленный Brunswick. Кии, шары, лампа над столом, честерфилды, барная полка. Всё продаётся: стол, кий, шары — через партнёра или сайт.',cap:'4–6 игроков',money:'~0,15 млн/мес почасово; главное — довод купить подписку «Резидент+»',capex:'~1,5 млн: стол 1,0–1,5 и свет, кии, стойка 0,3. Б/у Brunswick 9 футов в США — $2,6–7 тыс. плюс доставка и растаможка',sale:'3 000 ₽/ч для гостей, для «Резидент+» без доплаты'},
+p_bar:{tag:'member',what:'Барная комната старинного дома: буфет, стойка на 6 мест, кресла. Бар работает для резидентов на пробковом сборе: свой алкоголь из ячейки или купленный у партнёра. Своей алкогольной лицензии не нужно. На событиях алкоголь продаёт кейтеринг со своей лицензией. Стена именных ячеек: бокал, набор приборов, табличка с фамилией.',cap:'20–25',money:'~0,41 млн/мес (пробковый сбор и ячейки)',capex:'~1,0 млн (буфет — от антиквара на продажу)',sale:'Пробковый сбор 1 500 ₽ за бутылку · ячейка 3 000 ₽/мес'},
+p_games:{tag:'member',what:'Игральный зал: два ломберных стола с сукном (бридж, преферанс, винт, пасьянс) и стол для покера на 8. Старинные колоды, всё продаётся. Мастер-классы по играм имперской России, турниры. Играем без денежных ставок: игра на деньги вне игорных зон запрещена (244-ФЗ).',cap:'16',money:'~0,44 млн/мес',capex:'~0,35 млн (антикварные столы — у партнёра, на продажу)',sale:'Мастер-класс 3 500 ₽ · турнир-вечер с ужином 6 000 ₽'},
+p_vip1:{tag:'private',what:'Приватная комната на 4–6 человек: диван, кресла, портативный проектор для фильма. Можно для свидания. Только по брони.',cap:'4–6',money:'входит в VIP-комнаты: ~0,48 млн/мес на три комнаты',sale:'5 000 ₽/ч, минимум 4 часа'},
+p_vip2:{tag:'private',what:'Самая большая VIP-комната: стол на 8–10 для закрытого ужина, переговоров или игры. Шпионская эстетика 70-х.',cap:'8–10',money:'входит в VIP-комнаты',sale:'5 000 ₽/ч, минимум 4 часа'},
+p_kitchen:{tag:'service',what:'Сервисная кухня этажа (на сайте — «Кухня»): подача в зал, мойка, раздача.'},
+p_stairmain:{tag:'service',what:'Парадная лестница из цоколя. Гость поднимается в анфиладу.'},
+u_library:{tag:'member',what:'Библиотека редких изданий: прижизненные издания, поэзия Серебряного века, книги о Петербурге, американская классика XX века. Книги приходят от букинистов по той же схеме, что мебель от шоурумов: стоят у нас, любую можно купить. Большой читальный стол, кресла, лампы.',cap:'12 читателей · 30 на поэтическом вечере',money:'входит в подписку',capex:'основа фонда ~0,5–1,0 млн, остальное — от букинистов'},
+u_reading:{tag:'member',what:'Малый зал при библиотеке: витрины для выставки писателя месяца — рукописи, первые издания, фото. Отсюда поэтические вечера переходят в библиотеку.'},
+u_vinyl:{tag:'member',what:'Винил-салон: проигрыватель hi-fi, ламповый усилитель, колонки, стеллаж с коллекцией. Редкие пластинки продаются, лучшие уходят на аукцион раз в сезон.',cap:'8–10',money:'входит в подписку + продажи пластинок',capex:'~0,8 млн техника; пластинки — от дилеров на продажу'},
+u_lounge:{tag:'member',what:'Главная гостиная подписчиков: сюда приходят каждый день, сидят, работают, встречаются. Кофе и чай включены в подписку. Это сердце модели «купил доступ и пользуешься».',cap:'25',money:'подписка: ~1,86 млн/мес при 130 подписчиках',capex:'свет, ремонт, часть мебели ~1,5 млн; остальная мебель — от шоурумов'},
+u_bay:{tag:'member',what:'Эркер: два кресла для чтения у окна.'},
+u_salon:{tag:'event',what:'Салон приёмов — самый высокий зал (3,9 м). Камерные иммерсивные ужины на 24 человека: «Собрание декабристов», «Ужин у посла», дегустации. В обычные дни — гостиная резидентов.',cap:'24 за столом',money:'~0,34 млн/мес (4 ужина)',sale:'Ужин 12 000 ₽'},
+u_suite:{tag:'private',what:'Спальня посла «Ночь в посольстве»: после ужина остаёшься, утром завтрак в постель. Своя ванная рядом. Продаём пакетом «ужин + ночь».',cap:'2',money:'~0,28 млн/мес при 8 ночах',capex:'~0,5 млн (кровать и текстиль — от шоурума, на продажу)',sale:'45 000 ₽ ночь с завтраком',
+  verdict:'Делать — но одну спальню и вторым шагом. Сначала юрист: сдавать комнату на ночь можно только как средство размещения, нужна классификация и запись в реестре; плюс назначение «офис» в договоре. Апартамент 2 — резерв на вторую спальню, если первая будет занята 10+ ночей в месяц.'},
+u_bath2:{tag:'private',what:'Ванная спальни посла (по БТИ № 45, 47 — санузлы).'},
+u_vip3:{tag:'private',what:'VIP «Кабинет консула»: письменный стол, два кресла честерфилд, сейф-бар. Для переговоров и разговоров один на один.',cap:'4',sale:'5 000 ₽/ч'},
+u_apt2:{tag:'private',what:'Бывшие апартаменты со своими санузлами. Резерв: вторая спальня или гримёрная артистов для балов и ужинов.'},
+u_lockers:{tag:'member',what:'Шкафы резидентов: именной набор (бокал с гравировкой, приборы, салфетка), свой виски. Набор включён в цену ужина и окупается за три ужина.'},
+u_gallery2:{tag:'member',what:'Коридор как галерея: портреты писателей и поэтов, связанных с домом и эпохой, анонсы вечеров.'},
+u_buffet:{tag:'service',what:'Буфетная этажа у служебной лестницы: подъём блюд с кухни, кофе, посуда.'},
+u_ward:{tag:'member',what:'Гардероб резидентов.'},
+};
+
+/* ---------- Мебель и реквизит ---------- */
+function cokolExtra(g,mode){
+  const F=furn(g);
+  // кинозал
+  F.line(152,560,152,768,4,'solid'); // экран
+  F.text(175,664,'экран',13,-90);
+  F.rect(355,520,390,145,'dash');
+  F.rect(150,525,590,275,'dash');
+  if(mode==='party'){
+    F.rect(160,610,34,100); F.text(210,664,'DJ',14);
+    F.rect(260,560,260,210,'dash'); F.text(390,670,'танцпол',16);
+    for(const [x,y] of [[560,580],[560,740],[470,600],[470,730]]) F.circle(x,y,15);
+  } else {
+    for(let i=0;i<6;i++) F.circle(245,600+i*35,12);
+    for(const x of [310,405]) for(let i=0;i<3;i++) F.rect(x,592+i*66,30,58);
+    F.line(505,590,505,785,3);
+    for(let i=0;i<6;i++) F.circle(525,600+i*35,9);
+  }
+  F.rect(600,690,120,24); F.text(660,735,'бар',13);
+  F.rect(690,640,26,22); F.text(700,630,'проектор',12);
+  // погреб
+  for(const y of [205,470]) F.line(785,y,1025,y,6);
+  for(let i=0;i<8;i++) F.rect(1000,220+i*30,24,26);
+  F.rect(840,370,120,46); for(let i=0;i<4;i++){F.circle(855+i*30,360,7);F.circle(855+i*30,426,7);}
+  // кухня
+  F.rect(318,196,22,280); F.rect(462,196,22,280);
+  // склад/хьюмидор
+  for(const y of [210,370]) F.line(1090,y,1360,y,2);
+  F.rect(1430,205,140,30);
+  // гардероб
+  for(let i=0;i<3;i++) F.line(1100,640+i*50,1340,640+i*50,2);
+  // двор
+  for(const [x,y,r] of [[1500,500,34],[1700,520,40],[1560,740,36]]) F.circle(x,y,r,'dash');
+  for(const [x,y] of [[1620,640],[1700,720]]){F.circle(x,y,9);for(let a=0;a<8;a++){const t=a*Math.PI/4;F.line(x+13*Math.cos(t),y+13*Math.sin(t),x+20*Math.cos(t),y+20*Math.sin(t),1.2);}}
+  F.rect(1460,600,90,28); F.rect(1460,640,28,60);
+  F.out(942,890,'Парадный вход'); F.out(1600,890,'Вход во двор');
+}
+function paradnyExtra(g,mode){
+  const F=furn(g);
+  // камин и рояль
+  F.rect(925,587,60,14,'solid');
+  F.text(955,620,'камин (уточнить)',12);
+  F.path('M160 640 q0 -30 40 -30 l40 0 q20 0 20 30 l0 40 q0 20 -40 18 q-30 -2 -40 -30 z');
+  F.text(205,720,'рояль',13);
+  if(mode==='dinner'){
+    for(const x of [340,480,620,760,900]) for(const y of [690,812]){F.circle(x,y,30);for(let a=0;a<8;a++){const t=a*Math.PI/4;F.circle(x+42*Math.cos(t),y+42*Math.sin(t),6);}}
+  } else if(mode==='ball'){
+    F.rect(290,630,560,220,'dash'); F.text(570,745,'паркет для танцев',16);
+    F.rect(880,640,130,40); F.text(945,700,'оркестр',13);
+    for(let i=0;i<10;i++) F.rect(300+i*55,846,30,16);
+    F.rect(880,780,130,30); F.text(945,830,'шампанское',13);
+  } else {
+    for(let i=0;i<5;i++) F.rect(320+i*140,600,110,12,'solid');
+    for(let i=0;i<5;i++) F.rect(320+i*140,850,110,12,'solid');
+    F.rect(420,710,400,30); F.text(620,765,'таймлайн 1898–2026',14);
+    F.path('M1040 720 C 900 690, 700 680, 560 690 S 300 700, 280 760',true);
+    F.rect(950,800,70,30); F.text(985,792,'игристое',12);
+  }
+  // бильярдная
+  F.rect(599,343,64,116); F.rect(605,349,52,104);
+  for(const [x,y] of [[603,347],[659,347],[603,401],[659,401],[603,455],[659,455]]) F.circle(x,y,4);
+  F.rect(586,330,90,142,'dash');
+  F.rect(495,300,10,120); F.text(520,440,'кии',12);
+  F.rect(735,300,30,110);
+  F.rect(500,470,42,42); F.rect(560,470,42,42);
+  // бар
+  F.rect(1185,280,30,190); for(let i=0;i<6;i++) F.circle(1165,295+i*32,9);
+  F.rect(975,253,170,16); F.text(1060,285,'ячейки резидентов',12);
+  for(const [x,y] of [[1040,340],[1040,430]]){F.circle(x,y,18);F.rect(x-55,y-14,28,28);F.rect(x+27,y-14,28,28);}
+  // VIP
+  F.rect(1278,280,24,100); F.rect(1320,305,40,40); F.rect(1370,290,26,26); F.rect(1370,345,26,26);
+  F.rect(1520,350,170,56); for(let i=0;i<4;i++){F.circle(1545+i*40,338,7);F.circle(1545+i*40,418,7);}
+  F.rect(1740,300,26,120);
+  // игральный зал
+  for(const [x,y] of [[1295,735],[1295,812]]){F.rect(x,y,44,44);F.circle(x-10,y+22,6);F.circle(x+54,y+22,6);F.circle(x+22,y-10,6);F.circle(x+22,y+54,6);}
+  F.path('M1410 805 a55 30 0 1 0 110 0 a55 30 0 1 0 -110 0');
+  for(let a=0;a<8;a++){const t=a*Math.PI/4;F.circle(1465+70*Math.cos(t),805+44*Math.sin(t),6);}
+  F.rect(1530,700,18,120);
+  // кухня
+  F.rect(300,255,26,290); F.rect(425,255,26,290);
+}
+function upperExtra(g){
+  const F=furn(g);
+  // библиотека
+  F.rect(478,254,282,18,'solid'); F.rect(478,272,18,180,'solid');
+  for(let i=0;i<14;i++) F.line(480+i*20,254,480+i*20,272,1);
+  F.rect(560,315,140,52); for(let i=0;i<4;i++){F.circle(575+i*36,304,7);F.circle(575+i*36,378,7);}
+  F.rect(725,290,30,30); F.rect(725,335,30,30);
+  // выставка писателя
+  for(let i=0;i<3;i++) F.rect(490+i*95,505,70,24);
+  // гостиная
+  F.rect(312,700,110,28); F.rect(312,734,28,60); F.circle(380,762,16); F.rect(440,736,30,30); F.rect(440,776,30,30);
+  F.rect(320,818,160,30); F.text(400,865,'рабочий стол',12);
+  // эркер
+  F.rect(160,760,30,30); F.rect(215,760,30,30);
+  // винил
+  F.rect(513,710,16,150,'solid'); for(let i=0;i<10;i++) F.line(513,715+i*14,529,715+i*14,1);
+  F.rect(640,775,48,26); F.circle(655,788,9); F.rect(600,778,22,22); F.rect(688,770,14,30);
+  F.rect(560,835,110,26);
+  // VIP консул
+  F.rect(880,770,80,34); F.rect(865,820,30,30); F.rect(950,820,30,30);
+  // спальня
+  F.rect(1100,764,84,96); F.rect(1104,768,76,22); F.rect(1076,770,20,20); F.rect(1188,770,20,20); F.rect(1040,826,30,30);
+  // ванная
+  F.rect(1100,610,70,30); F.circle(1200,630,12);
+  // салон
+  F.rect(1300,700,226,50); for(let i=0;i<11;i++){F.circle(1310+i*21,688,6);F.circle(1310+i*21,762,6);} F.circle(1290,725,6); F.circle(1536,725,6);
+  // апартамент 2
+  F.rect(1110,330,80,90,'dash');
+  // ячейки
+  for(let i=0;i<12;i++) F.rect(950+i*23,495,20,20);
+  // буфетная
+  F.rect(306,364,24,90); F.rect(370,494,64,20);
+  // галерея
+  for(let i=0;i<8;i++) F.line(520+i*48,588,550+i*48,588,3);
+  F.out(766,1000,'Балкон над парадным входом');
+}
+
+/* ---------- Отрисовка ---------- */
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function furn(g){
+  return{
+    rect(x,y,w,h,cls=''){el('rect',{x,y,width:w,height:h,rx:2,class:'fur '+cls},g)},
+    circle(x,y,r,cls=''){el('circle',{cx:x,cy:y,r,class:'fur '+cls},g)},
+    line(x1,y1,x2,y2,w=1.3,cls=''){el('line',{x1,y1,x2,y2,class:'fur '+cls,'stroke-width':w},g)},
+    path(d,dash){el('path',{d,class:'fur'+(dash?' dash':'')},g)},
+    text(x,y,t,s=13,rot){if(!t)return;const e=el('text',{x,y,class:'lbl2','font-size':s},g);if(rot)e.setAttribute('transform',`rotate(${rot} ${x} ${y})`);e.textContent=t;},
+    out(x,y,t){const e=el('text',{x,y,class:'outlbl'},g);e.textContent=t;}
+  };
+}
+let floor='paradny', sel=null;
+const MODES={paradny:[['dinner','Ужин-приём'],['expo','Выставка'],['ball','Бал']],cokol:[['cinema','Кино'],['party','Вечеринка']]};
+const mode={paradny:'dinner',cokol:'cinema'};
+
+function draw(){
+  const F=FLOORS[floor], svg=document.getElementById('plan');
+  svg.innerHTML='';
+  const defs=el('defs',{},svg);
+  const p=el('pattern',{id:'hatch',width:9,height:9,patternUnits:'userSpaceOnUse',patternTransform:'rotate(45)'},defs);
+  el('rect',{width:9,height:9,fill:'var(--hatch-bg)'},p);
+  el('line',{x1:0,y1:0,x2:0,y2:9,stroke:'var(--wall)','stroke-width':1.4,'stroke-opacity':.75},p);
+  el('text',{x:960,y:175,class:'lbl','font-size':40},svg).textContent=F.title;
+  // контур
+  const pts=F.outline.map(p=>p.join(',')).join(' ');
+  el('polygon',{points:pts,fill:'url(#hatch)',stroke:'var(--wall)','stroke-width':2},svg);
+  if(F.bay){el('polygon',{points:'105,900 292,900 252,988 145,988',fill:'url(#hatch)',stroke:'var(--wall)','stroke-width':2},svg);
+            el('polygon',{points:'137,880 265,880 236,962 166,962',fill:'var(--bg)',stroke:'var(--wall)','stroke-width':1.5},svg);}
+  if(F.balcony){el('path',{d:'M640 906 A126 70 0 0 0 892 906',fill:'none',stroke:'var(--wall)','stroke-width':2,'stroke-dasharray':'2 0'},svg);}
+  // окна
+  for(const [o,y,t,x1,x2] of F.windows){el('rect',{x:x1,y,width:x2-x1,height:t,fill:'var(--bg)'},svg);
+    for(const k of [.38,.62]) el('line',{x1,y1:y+t*k,x2,y2:y+t*k,stroke:'var(--wall)','stroke-width':1.2},svg);
+    el('line',{x1,y1:y,x2:x1,y2:y+t,stroke:'var(--wall)','stroke-width':1.5},svg);el('line',{x1:x2,y1:y,x2,y2:y+t,stroke:'var(--wall)','stroke-width':1.5},svg);}
+  // комнаты
+  const roomsG=el('g',{},svg);
+  for(const r of F.rooms){
+    const [x,y,w,h]=r.r, key=r.part||r.id;
+    const g=el('g',{class:'room'+(sel===key?' sel':''),'data-id':key},roomsG);
+    if(r.yard){el('rect',{x:x-20,y:y-15,width:w+40,height:h+35,fill:'none',stroke:'var(--wall)','stroke-width':1.5,'stroke-dasharray':'10 6'},g);}
+    el('rect',{x,y,width:w,height:h,fill:'var(--bg)',stroke:r.yard?'none':'var(--wall)','stroke-width':1.6},g);
+    el('rect',{x,y,width:w,height:h,class:'fill',fill:COLORS[r.cat],'fill-opacity':r.cat==='service'?.05:.12},g);
+    g.addEventListener('click',()=>{sel=key;draw();showInfo(key);});
+  }
+  // проёмы и простенки
+  for(const [x,y,w,h] of (F.openings||[])) if(w&&h) el('rect',{x,y,width:w,height:h,fill:'var(--bg)'},svg);
+  for(const [x,y,w,h] of (F.piers||[])) el('rect',{x,y,width:w,height:h,fill:'url(#hatch)',stroke:'var(--wall)','stroke-width':1.5},svg);
+  // лестницы
+  for(const r of F.rooms){ if(!r.stair) continue; const [x,y,w,h]=r.r; const g=el('g',{},svg);
+    if(r.stair==='main'){for(let i=0;i<9;i++) el('line',{x1:x+42,y1:y+80+i*18,x2:x+122,y2:y+80+i*18,class:'fur'},g); el('rect',{x:x+42,y:y+80,width:80,height:162,class:'fur'},g);}
+    else {const n=Math.floor((h-30)/16); for(let i=0;i<n;i++) el('line',{x1:x+10,y1:y+15+i*16,x2:x+w-10,y2:y+15+i*16,class:'fur'},g); el('line',{x1:x+w/2,y1:y+15,x2:x+w/2,y2:y+h-15,class:'fur'},g);}
+  }
+  // мебель
+  const fg=el('g',{},svg); window[F.extra](fg,mode[floor]);
+  // подписи
+  for(const r of F.rooms){ if(!r.name) continue; const [x,y,w,h]=r.r; const cx=x+w/2, cy=r.ly||y+h/2;
+    const t=el('text',{x:cx,y:cy,class:'lbl','font-size':r.fs||20},svg); t.textContent=r.name;
+    if(r.vert){t.setAttribute('transform',`rotate(-90 ${cx} ${cy})`);}
+    if(r.s&&!r.vert){const s=el('text',{x:cx,y:cy+Math.max(16,(r.fs||20)*.85),class:'lbl2','font-size':Math.max(11,(r.fs||20)*.55)},svg);s.textContent=r.s;}
+  }
+  document.getElementById('floorNote').textContent=F.note;
+  // режимы
+  const m=document.getElementById('modes'); m.innerHTML='';
+  const info=document.createElement('span'); info.textContent=`${F.site} · ${F.h}`; info.style.marginRight='10px'; m.appendChild(info);
+  for(const [k,t] of (MODES[floor]||[])){const b=document.createElement('button');b.textContent=t;b.className=mode[floor]===k?'on':'';b.onclick=()=>{mode[floor]=k;draw();};m.appendChild(b);}
+}
+
+function showInfo(id){
+  const a=document.getElementById('info'); const r=Object.values(FLOORS).flatMap(f=>f.rooms).find(r=>(r.part||r.id)===id&&!r.part)||{};
+  const d=INFO[id];
+  a.classList.toggle('sheet',matchMedia('(max-width:900px)').matches); a.scrollTop=0;
+  const x='<button class="close" aria-label="Закрыть" onclick="sel=null;draw();intro()">×</button>';
+  if(!d){a.innerHTML=`${x}<h2>${r.name||'—'}</h2><p class="meta">${r.s||''}</p><p>Сервисное помещение.</p>`;return;}
+  const row=(k,v)=>v?`<dt>${k}</dt><dd>${v}</dd>`:'';
+  a.innerHTML=`${x}<span class="tag" style="color:${COLORS[d.tag]}">${CAT[d.tag]}</span><h2>${r.name}</h2><p class="meta">${r.s||''}</p>
+  <p>${d.what}</p>${d.invite?`<p><b style="color:var(--ink)">Вход по знакомству.</b> ${d.invite}</p>`:''}
+  ${d.verdict?`<p><b style="color:var(--ink)">Делать ли.</b> ${d.verdict}</p>`:''}
+  <dl>${row('Вместимость',d.cap)}${row('Цены',d.sale)}${row('Деньги',d.money)}${row('Вложения',d.capex)}${row('Рынок',d.market)}</dl>`;
+}
+function intro(){
+  document.getElementById('info').classList.remove('sheet');
+  document.getElementById('info').innerHTML=`<h2>Как читать план</h2>
+  <p>Нажмите на комнату, чтобы увидеть, что в ней, на сколько человек, сколько она приносит и сколько стоит её обставить.</p>
+  <p><b style="color:var(--ink)">Главное.</b> Дом не ждёт клиентов, а живёт каждый день. Внизу кино и вечеринки, на парадном этаже события, выставка, бильярд, бар и игры, наверху этаж подписки «Резиденция» и спальня посла.</p>
+  <p><b style="color:var(--ink)">Важная находка.</b> На сайте оператора «Этаж 1» — это цоколь по БТИ, а «Этаж 2» — 1-й этаж по БТИ. Верхний этаж (около 400 м² бывших апартаментов) на сайте не показан и, по-видимому, не используется. Это наш главный резерв площади.</p>
+  <p>Мебель — от шоурумов, книги — от букинистов, пластинки — от дилеров: всё стоит у нас и продаётся. Вкладываем свои деньги только в технику, свет и то, что изнашивается.</p>`;
+}
+
+/* ---------- Деньги ---------- */
+const Z=[ // зона, выручка и вклад: осторожный/база/хороший, вложения
+['Аренда зала под события (4 в месяц × 300 тыс.)',[.72,1.20,1.56],[.72,1.20,1.56],0],
+['Выставка по приглашениям (20 дней × 40 гостей)',[1.22,2.04,2.65],[.60,1.16,1.58],.6],
+['Кинозал в цоколе (12 показов + частные + 2 вечеринки)',[.90,1.50,1.95],[.34,.72,1.01],4.2],
+['Подписка «Резиденция» (100 × 15 тыс. + 30 × 35 тыс.)',[1.53,2.55,3.31],[.98,1.86,2.53],3.8],
+['Бильярдная Solids (60 ч × 3 000 ₽)',[.11,.18,.23],[.09,.15,.20],1.5],
+['Игральный зал (8 мастер-классов + 4 турнира)',[.43,.72,.94],[.23,.44,.59],.35],
+['Иммерсивные ужины (3 × 80 гостей + 4 × 24)',[2.85,4.75,6.18],[.73,1.22,1.59],.5],
+['VIP-комнаты (30 броней × 4 ч × 5 000 ₽)',[.36,.60,.78],[.29,.48,.62],.9],
+['Спальня посла (8 ночей × 45 тыс.)',[.22,.36,.47],[.17,.28,.36],.5],
+['Бар: пробковый сбор и ячейки',[.29,.48,.62],[.24,.41,.53],1.0]];
+const FIX=3.94;
+function money(){
+  const s=document.getElementById('money');
+  const sum=i=>Z.reduce((a,z)=>a+z[2][i],0), rev=i=>Z.reduce((a,z)=>a+z[1][i],0), cap=Z.reduce((a,z)=>a+z[3],0);
+  const f=v=>v.toFixed(2).replace('.',',');
+  s.innerHTML=`<h3>Закрываем аренду каждый месяц, а не от случая к случаю</h3>
+  <div class="cards">
+   <div class="card"><b>${f(FIX)}</b><span>млн ₽ в месяц — все постоянные расходы дома: аренда 2,0, коммуналка 0,3, ядро команды 1,39, прочее 0,25</span></div>
+   <div class="card"><b>${f(sum(1))}</b><span>млн ₽ в месяц остаётся со всех зон в базовом сценарии (через ~6 месяцев)</span></div>
+   <div class="card"><b class="pos">+${f(sum(1)-FIX)}</b><span>млн ₽ в месяц прибыль до налога в базе; в осторожном сценарии +${f(sum(0)-FIX)}</span></div>
+   <div class="card"><b>${f(cap)}</b><span>млн ₽ вложений во все зоны; окупаются за ~3–4 месяца базовой работы</span></div>
+  </div>
+  <div class="scroll"><table><thead><tr><th>Зона</th><th>Выручка, база</th><th>Остаётся: осторожно</th><th>база</th><th>хорошо</th><th>Вложения</th></tr></thead><tbody>
+  ${Z.map(z=>`<tr><td>${z[0]}</td><td>${f(z[1][1])}</td><td>${f(z[2][0])}</td><td>${f(z[2][1])}</td><td>${f(z[2][2])}</td><td>${z[3]?f(z[3]):'—'}</td></tr>`).join('')}
+  <tr class="tot"><td>Итого по зонам</td><td>${f(rev(1))}</td><td>${f(sum(0))}</td><td>${f(sum(1))}</td><td>${f(sum(2))}</td><td>${f(cap)}</td></tr>
+  <tr><td>Минус постоянные расходы</td><td></td><td>−${f(FIX)}</td><td>−${f(FIX)}</td><td>−${f(FIX)}</td><td></td></tr>
+  <tr class="tot"><td>Прибыль до налога в месяц</td><td></td><td class="pos">+${f(sum(0)-FIX)}</td><td class="pos">+${f(sum(1)-FIX)}</td><td class="pos">+${f(sum(2)-FIX)}</td><td></td></tr>
+  </tbody></table></div>
+  <p>Все цифры — оценки в млн ₽ в месяц. «Остаётся» — выручка минус еда, напитки, эквайринг и персонал самой зоны. Осторожный сценарий — 60% объёмов, хороший — 130%.</p>
+  <h3>Что из этого следует</h3>
+  <ul>
+   <li><b>Аренду закрывают три постоянные кассы:</b> события в зале (~1,2), выставка (~1,16) и подписка (~1,86). Вместе это 4,2 млн, больше всех постоянных расходов.</li>
+   <li><b>На старте не хватает 0,36 млн в месяц.</b> События, выставка и ужины дают 3,58 против 3,94. Разрыв закрывает первая сотня подписчиков, поэтому подписку продаём с первого дня выставки.</li>
+   <li><b>Бильярд, винил и библиотека сами по себе почти не зарабатывают.</b> Они — причина купить подписку. Считать их отдельно правильно, но решение по ним принимать вместе с подпиской.</li>
+   <li><b>Кинозал окупается за ~6 месяцев полный и за ~2 месяца лёгкий.</b> Начинаем с лёгкого: портативные проекторы и диваны, без полной шумоизоляции. Полный — когда показы заполнены на 75%.</li>
+   <li><b>Продажа вещей</b> (мебель, столы, пластинки, книги) в расчёт не входит. Это плюс сверху: с второго сезона 10–15% комиссии.</li>
+  </ul>
+  <h3>Подписка «Резиденция»</h3>
+  <ul>
+   <li><b>«Резидент» — 15 000 ₽/мес:</b> верхний этаж каждый день, библиотека, винил-салон, гостиная, кофе и чай, бар на пробковом сборе, приоритет на ужины и балы, 1 гость в месяц.</li>
+   <li><b>«Резидент+» — 35 000 ₽/мес:</b> плюс бильярд и игральный зал без почасовой платы, 4 часа VIP-комнаты в месяц, именная ячейка и набор, 3 гостя.</li>
+   <li>Ориентир: годовой взнос «Атлантов» — 750 тыс. ₽, фитнес в Петербурге — от 5,7 тыс. в месяц. «Резидент» за год — 180 тыс.: дешевле бизнес-клуба, дороже фитнеса.</li>
+  </ul>
+  <h3>Не проверено</h3>
+  <p>Ставки персонала, коммуналка, цены закупок — оценки до коммерческих предложений. Пожарная вместимость цоколя и верхнего этажа. Юрист: билеты и спальня при назначении «офис», пробковый сбор без лицензии, права на показ фильмов. Свободен ли верхний этаж и входит ли он в аренду.</p>`;
+}
+
+/* ---------- Вкладки ---------- */
+const TABS=[['cokol','Цоколь'],['paradny','Парадный этаж'],['upper','Верхний этаж'],['money','Деньги']];
+function tabs(){
+  const n=document.getElementById('tabs'); n.innerHTML='';
+  for(const [k,t] of TABS){const b=document.createElement('button');b.textContent=t;b.className=(k==='money'?!document.getElementById('money').hidden:floor===k&&document.getElementById('money').hidden)?'on':'';
+    b.onclick=()=>{const m=document.getElementById('money'),mn=document.getElementById('main');
+      if(k==='money'){m.hidden=false;mn.hidden=true;money();}else{m.hidden=true;mn.hidden=false;floor=k;sel=null;draw();intro();}
+      tabs();};n.appendChild(b);}
+}
+tabs(); draw(); intro();
+</script>
+</body>
+</html>
